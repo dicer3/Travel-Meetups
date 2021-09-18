@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false, // path contain all keys for dymanic route else it would shoe for another route
+    fallback: "blocking", // path contain all keys for dymanic route else it would shoe for another route
     // if true next will regenrate page dynmically
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
